@@ -1,4 +1,5 @@
 import React from "react";
+import { useRef } from "react"
 import { MapPin, Calendar, Clock, CheckCircle } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -6,19 +7,38 @@ import { IoStar } from "react-icons/io5";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 
 import "swiper/css/pagination";
-import { Pagination, Autoplay } from "swiper/modules";
+import {Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Link } from "react-router-dom";
 
 export const TopWeddingVendorCard = ({ service }) => {
+    const swiperRef = useRef(null)
   return (
     <div className=" bg-white rounded-2xl shadow-lg overflow-hidden">
       <div className="relative h-54 bg-gray-100">
-        <img
-          src={service.mainImage}
-          alt={service.mainImageAlt}
-          className="object-cover w-full h-full absolute inset-0 hover:scale-110 transition duration-500 "
-        />
-        <div className="absolute -bottom-8 left-40">
+<Swiper
+          ref={swiperRef}
+          slidesPerView={1}
+          spaceBetween={0}
+          loop={true}
+          navigation={{
+            prevEl: `.prev-${service.id}`,
+            nextEl: `.next-${service.id}`,
+          }}
+          modules={[Navigation]}
+          className="h-full w-full"
+        >
+          {[service.mainImage, service.secondImage, service.thirdImage].filter(Boolean).map((img, index) => (
+            <SwiperSlide key={index}>
+              <img
+                src={img || "/placeholder.svg"}
+                alt={`${service.name} image ${index + 1}`}
+                className="object-cover hover:scale-150 transition ease-in-out duration-500 w-full h-full"
+                loading="lazy"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="absolute -bottom-8 left-40 z-10">
           <div className="w-16 h-16 rounded-full border-4 border-white bg-gray-200 overflow-hidden">
             <img
               src={service.profileImage}
@@ -82,10 +102,14 @@ const servicesData = [
     coverage: "8 hours",
     price: "£3500",
     mainImage:
-      "https://www.shaadisouk.com/_next/image?url=https%3A%2F%2Fshaadisouk-image-bucket.s3.eu-west-2.amazonaws.com%2Fuploads%2Fb9a7a131-94c3-4919-9045-a00ef453948227f9b922-6a7a-4a78-b49f-82c55110aeeaDSC05091%20(1)%20copy.jpg.jpg&w=750&q=75",
+      "/main_detail/one.jpg",
     mainImageAlt: "Wedding couple - bride in lace dress and groom in dark suit",
+     secondImage:
+      "/main_detail/two.jpg",
+    thirdImage:
+      "/main_detail/three.jpg",
     profileImage:
-      "https://www.shaadisouk.com/_next/image?url=https%3A%2F%2Fshaadisouk-image-bucket.s3.eu-west-2.amazonaws.com%2Fuploads%2F33dfb8a4-cc6e-46b5-8133-c65d4b49555fcropped-image.jpg&w=256&q=75",
+      "/main_detail/four.jpg",
     profileImageAlt: "Photographer profile",
     isNew: true,
   },
@@ -100,10 +124,14 @@ const servicesData = [
     coverage: "Full day",
     price: "£4200",
     mainImage:
-      "https://images.unsplash.com/photo-1529632316988-4dd0eac6420f?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+      "/main_detail/five.jpg",
     mainImageAlt: "Wedding planner organizing flowers",
+     secondImage:
+      "/main_detail/six.jpg",
+    thirdImage:
+      "/main_detail/one.jpg",
     profileImage:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+      "/main_detail/two.jpg",
     profileImageAlt: "Wedding planner profile",
     isNew: false,
   },
@@ -117,70 +145,84 @@ const servicesData = [
     experience: "10+ years",
     coverage: "150 guests",
     price: "£2800",
-    mainImage:
-      "https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-    mainImageAlt: "Wedding catering table setup",
+   mainImage:
+      "/main_detail/three.jpg",
+    mainImageAlt: "Wedding planner organizing flowers",
+     secondImage:
+      "/main_detail/four.jpg",
+    thirdImage:
+      "/main_detail/five.jpg",
     profileImage:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+      "/main_detail/six.jpg",
     profileImageAlt: "Caterer profile",
     isNew: true,
   },
   {
     id: 4,
-    name: "Michael",
-    isVerified: false,
-    serviceType: "Catering",
-    packageName: "Deluxe Package",
-    location: "London",
-    experience: "10+ years",
-    coverage: "150 guests",
-    price: "£2800",
+    name: "Emma",
+    isVerified: true,
+    serviceType: "Floral Design",
+    packageName: "Premium Package",
+    location: "Manchester",
+    experience: "6+ years",
+    coverage: "Full venue",
+    price: "£1800",
     mainImage:
-      "https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-    mainImageAlt: "Wedding catering table setup",
+      "/main_detail/one.jpg",
+    mainImageAlt: "Wedding floral arrangements",
+    secondImage:
+      "/main_detail/two.jpg",
+    thirdImage:
+      "/main_detail/three.jpg",
     profileImage:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
-    profileImageAlt: "Caterer profile",
-    isNew: true,
+      "/main_detail/four.jpg",
+    profileImageAlt: "Florist profile",
+    isNew: false,
   },
   {
     id: 5,
-    name: "Michael",
+    name: "James",
     isVerified: false,
-    serviceType: "Catering",
-    packageName: "Deluxe Package",
-    location: "London",
-    experience: "10+ years",
-    coverage: "150 guests",
-    price: "£2800",
+    serviceType: "DJ Services",
+    packageName: "Ultimate Package",
+    location: "Birmingham",
+    experience: "8+ years",
+    coverage: "12 hours",
+    price: "£1200",
     mainImage:
-      "https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-    mainImageAlt: "Wedding catering table setup",
+      "/main_detail/five.jpg",
+    mainImageAlt: "DJ setup at wedding",
+    secondImage:
+      "/main_detail/six.jpg",
+    thirdImage:
+      "/main_detail/one.jpg",
     profileImage:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
-    profileImageAlt: "Caterer profile",
+      "/main_detail/two.jpg",
+    profileImageAlt: "DJ profile",
     isNew: true,
   },
   {
     id: 6,
-    name: "Michael",
-    isVerified: false,
-    serviceType: "Catering",
-    packageName: "Deluxe Package",
-    location: "London",
-    experience: "10+ years",
-    coverage: "150 guests",
-    price: "£2800",
+    name: "Lisa",
+    isVerified: true,
+    serviceType: "Makeup Artist",
+    packageName: "Bridal Package",
+    location: "Liverpool",
+    experience: "4+ years",
+    coverage: "Bridal party",
+    price: "£800",
     mainImage:
-      "https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-    mainImageAlt: "Wedding catering table setup",
+      "/main_detail/three.jpg",
+    mainImageAlt: "Bridal makeup application",
+    secondImage:
+     "/main_detail/four.jpg",
+    thirdImage:
+"/main_detail/five.jpg",
     profileImage:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
-    profileImageAlt: "Caterer profile",
-    isNew: true,
+     "/main_detail/five.jpg",
+    isNew: false,
   },
-  // Add more services as needed
-];
+]
 
 export default function WeddingVendorCard() {
   return (

@@ -19,17 +19,17 @@ function Banner() {
   const bannerImages = [
     {
       id: 1,
-      url: 'https://www.shaadisouk.com/assets/images/bg-2.jpg',
+      url: '/main_detail/one.jpg',
       alt: 'Summer Collection',
     },
     {
       id: 2, 
-      url: 'https://www.shaadisouk.com/assets/images/bg-5.jpg',
+      url: '/main_detail/two.jpg',
       alt: 'Winter Special',
     },
     {
       id: 3,
-      url: 'https://www.shaadisouk.com/assets/images/bg-1.png',
+      url: '/main_detail/three.jpg',
       alt: 'New Arrivals',
     },
   ];
