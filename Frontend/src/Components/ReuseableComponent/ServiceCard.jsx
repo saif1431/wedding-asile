@@ -9,6 +9,7 @@ import "swiper/css/pagination"
 import { IoStar } from "react-icons/io5"
 import { RiVerifiedBadgeFill } from "react-icons/ri"
 import { Navigation, Pagination, Autoplay } from "swiper/modules"
+import { Link } from "react-router-dom"
 
 const ServiceCard = ({ service }) => {
   const swiperRef = useRef(null)
@@ -105,9 +106,9 @@ const ServiceCard = ({ service }) => {
         <hr className="border-gray-300 mb-3" />
         <div className="flex items-center justify-between">
           <div className="text-md font-bold text-green-600">{service.price}</div>
-          <button className="px-8 py-2 text-sm border border-gray-300 rounded-full text-gray-800 hover:bg-gray-50 hover:text-black transition">
+          <Link to='/PackageView' className="px-8 py-2 text-sm border border-gray-300 btn2 rounded-full text-black font-philper  hover:text-white transition">
             View Package
-          </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -251,7 +252,7 @@ const servicesData = [
 
 export default function ServicesCarousel() {
   return (
-    <div className="py-8 px-4 lg:px-28">
+    <div className="">
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
@@ -267,7 +268,7 @@ export default function ServicesCarousel() {
           768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
-        modules={[Pagination, Autoplay]}
+        modules={[ Autoplay]}
         className="mySwiper"
       >
         {servicesData.map((service) => (

@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaTiktok } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -19,12 +20,12 @@ function Footer() {
         {/* About Us Column */}
         <div>
           <h3 className="text-white font-semibold  mb-4 text-2xl">About Us</h3>
-          <ul className="space-y-2 text-lg">
-            <li>About Us</li>
+          <ul className="space-y-2 text-lg flex flex-col">
+            <Link to='about'>About Us</Link>
             <li>How it Works</li>
             <li>Contact Us</li>
-            <li>Cancellation Policy</li>
-            <li>Terms Of Use</li>
+            <Link to='cancellation-policy'>Cancellation Policy</Link>
+            <Link to='terms-of-use'>Terms Of Use</Link>
             <li>Privacy Notice</li>
             <li>FAQs</li>
           </ul>

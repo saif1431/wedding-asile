@@ -11,7 +11,7 @@ function HomePage() {
   return (
     <div className=' '>
       <Banner/>
-      <SetTime/>
+      <SetTime  bottom='bottom-22'/>
       <PopulerServices/>
       <WeddingVendor/>
       <HowItWorks/>

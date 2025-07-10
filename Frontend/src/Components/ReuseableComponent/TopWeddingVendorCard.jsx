@@ -7,6 +7,7 @@ import { RiVerifiedBadgeFill } from "react-icons/ri";
 
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 export const TopWeddingVendorCard = ({ service }) => {
   return (
@@ -17,7 +18,7 @@ export const TopWeddingVendorCard = ({ service }) => {
           alt={service.mainImageAlt}
           className="object-cover w-full h-full absolute inset-0 hover:scale-110 transition duration-500 "
         />
-        <div className="absolute -bottom-8 left-6">
+        <div className="absolute -bottom-8 left-40">
           <div className="w-16 h-16 rounded-full border-4 border-white bg-gray-200 overflow-hidden">
             <img
               src={service.profileImage}
@@ -26,26 +27,12 @@ export const TopWeddingVendorCard = ({ service }) => {
             />
           </div>
         </div>
-        {service.isNew && (
-          <div className="absolute top-4 right-4">
-          
-          </div>
-        )}
       </div>
       <div className="pt-12 px-6 pb-6">
-        <div className="flex items-center justify-between gap-2 mb-2">
-        <div className="flex items-center ">
-            <h2 className="text-2xl font-bold text-gray-900">{service.name}</h2>
-        
-          {service.isVerified && (
-            <RiVerifiedBadgeFill  className="w-6 h-6 text-green-500 fill-current" />
-          )}
-            </div>
-             <span className="bg-[#FFD586] text-black font-medium px-3 py-1 text-md flex items-center gap-2 rounded-md hover:bg-yellow-500 transition">
-              <IoStar />  New
-            </span>
-        </div>
+ <div className="flex flex-col items-center ">
+            <h2 className="text-xl font-bold text-gray-900">{service.name}</h2>
         <p className="text-gray-600 mb-4">{service.serviceType}</p>
+            </div>
         <h3 className="text-lg font-semibold text-gray-900 mb-6">
           {service.packageName}
         </h3>
@@ -72,12 +59,11 @@ export const TopWeddingVendorCard = ({ service }) => {
             </span>
           </div>
         </div>
-        <hr className="border-gray-300 mb-3" />
-        <div className="flex items-center justify-between ">
-          <div className="text-md font-bold text-green-600">{service.price}</div>
-          <button className="px-8 py-2 text-sm border border-gray-300 rounded-full text-gray-800 btn2  hover:text-white transition">
-            View Package
-          </button>
+        <div className="flex items-center justify-center ">
+    
+          <Link to='VendorProfile' className="px-4 py-3 text-xl font-philper border border-gray-300 rounded-full text-gray-800 btn2  hover:text-white transition">
+            See more
+          </Link>
         </div>
       </div>
     </div>

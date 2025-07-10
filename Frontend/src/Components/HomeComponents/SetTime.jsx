@@ -1,9 +1,9 @@
 import React from 'react'
 
-function SetTime() {
+function SetTime({bottom}) {
   return (
-   <div className='relative max-w-6xl bg-red-400 mx-auto'>
-      <div className='bg-white px-4 lg:px-16 rounded-2xl flex lg:items-center justify-center flex-col lg:flex-row gap-6 py-12 lg:absolute -bottom-22 ' >
+   <div className=' px-6 lg:px-0 max-w-6xl  mx-auto'>
+      <div className={`bg-white px-4 lg:px-16 rounded-2xl flex lg:items-center justify-center flex-col lg:flex-row gap-6 py-12 lg:absolute ${bottom}`} >
  <div className='flex flex-col gap-3'>
       <label  className='text-xl' htmlFor="">Location</label>
       <input className='rounded-full py-2 text-lg px-4 bg-[#F5F3F4] border-none outline-none' type="text " placeholder='Where is the Wedding' />
