@@ -9,8 +9,8 @@ function CancellationPolicy() {
       <p className=''>This Cancellation Policy forms part of, and is governed by, our website <a className='text-blue-600 hover:text-blue-400' href="">terms and conditions.</a> Capitalized terms below are defined within our website <a className='text-blue-600 hover:text-blue-400'  href="">terms and conditions</a></p>
       <p className='font-philper '>Cancellation Policy – Cancellations by You</p>
       <div className='space-y-4'>
-            <p>When You book services from Your Supplier via Our Website, You accept and agree to the cancellation policy set out below in addition to any terms and conditions that Your Supplier may apply to Your booking
-
+            <p>
+When You book services from Your Supplier via Our Website, You accept and agree to the cancellation policy set out below in addition to any terms and conditions that Your Supplier may apply to Your booking
 </p>
 <li><span className='font-bold'>Cancellation Within 30 Days of Booking:</span> In general, where You cancel Your booking for any reason (or no reason) within 30 days of the date upon which You make that booking You shall receive a full refund of the Deposit less any Service Fees. The only exception to this is that You will not be entitled to any refund of the Deposit, the Service Fees, or the remaining balance for Your booking where you seek to cancel Your booking and Your Event Date is within 30 days.
 </li>
