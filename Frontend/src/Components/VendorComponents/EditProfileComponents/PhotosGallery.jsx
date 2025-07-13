@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { IoImageOutline } from "react-icons/io5";
 import { MdDelete } from "react-icons/md";
 
-function PhotosGallery() {
+function PhotosGallery({ showImageInfo = true }) {
   // Gallery Photos Section
   const galleryInputRef = useRef(null);
   const [galleryImages, setGalleryImages] = useState([]);
@@ -146,11 +146,13 @@ function PhotosGallery() {
               <p className='text-gray-500'>Click here</p>
             </div>
           </div>
-          <div className='space-y-2'>
-            <p className='text-gray-500 text-lg mt-2'>Supported Image JPG,JPEG,PNG</p>
-            <p>Total uploaded image size (MB): {(galleryTotalSize / (1024 * 1024)).toFixed(2)}</p>
-            <p>Images uploaded: {galleryImages.length}/10</p>
-          </div>
+           {showImageInfo && (
+            <div className='space-y-2'>
+              <p className='text-gray-500 text-lg mt-2'>Supported Image JPG,JPEG,PNG</p>
+              <p>Total uploaded image size (MB): {(galleryTotalSize / (1024 * 1024)).toFixed(2)}</p>
+              <p>Images uploaded: {galleryImages.length}/10</p>
+            </div>
+          )}
         </div>
 
         <hr className='mt-8 border-gray-300' />
@@ -204,11 +206,13 @@ function PhotosGallery() {
               ))}
             </div>
           </div>
-          <div className='space-y-2'>
-            <p className='text-gray-500 text-lg mt-2'>Supported Image JPG,JPEG,PNG</p>
-            <p>Total uploaded image size (MB): {(primaryTotalSize / (1024 * 1024)).toFixed(2)}</p>
-            <p>Images uploaded: {primaryImages.length}/3</p>
-          </div>
+       {showImageInfo && (
+  <div className='space-y-2'>
+    <p className='text-gray-500 text-lg mt-2'>Supported Image JPG,JPEG,PNG</p>
+    <p>Total uploaded image size (MB): {(primaryTotalSize / (1024 * 1024)).toFixed(2)}</p>
+    <p>Images uploaded: {primaryImages.length}/3</p>
+  </div>
+)}
         </div>
 
         {/* Display area for primary photos */}

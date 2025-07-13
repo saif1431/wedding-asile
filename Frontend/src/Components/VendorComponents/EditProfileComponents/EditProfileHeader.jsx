@@ -43,7 +43,7 @@ function EditProfileHeader() {
         {activeTab === 'photos' && (
           <div>
             <p className=''>Change your profile images</p>
-            <PhotosGallery/>
+            <PhotosGallery showImageInfo={true} />
           </div>
         )}
 

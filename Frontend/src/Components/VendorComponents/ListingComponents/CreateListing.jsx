@@ -1,4 +1,6 @@
 import React from 'react'
+import GalleryUpload from './GalleryUpload'
+import ServiceIncludes from './ServiceIncludes'
 
 function CreateListing() {
   return (
@@ -20,7 +22,7 @@ function CreateListing() {
       </select>
 </div>
 <div>
-      <label className="block text-sm font-medium text-gray-700 mt-4">Package Type*</label>
+      <label className  ="block text-sm font-medium text-gray-700 mt-4">Package Type*</label>
       <input type="text" className='w-full p-3 text-xl bg-[#F5F3F4] border-none outline-none' placeholder='Enter Package Title' />
 </div>
 <div>
@@ -44,6 +46,9 @@ function CreateListing() {
       <input type="number" className='w-full p-3 text-xl bg-[#F5F3F4] border-none outline-none' placeholder='Enter Team Size' />
       </div>
 </div>
+
+<GalleryUpload/>
+<ServiceIncludes/>
       </div>
     </div>
   )

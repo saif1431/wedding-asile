@@ -23,12 +23,12 @@
       { path: "editProfile", icon: <CgProfile  size={20} />, label: "Edit Profile" },
       { path: "payments", icon: <FiMessageSquare size={20} />, label: "Message" },
       { path: "packages", icon: <FaClipboardList size={20} />, label: "Manage Listing" },
-      { path: "settings", icon: <FaLocationDot size={20} />, label: "Service Location" },
-      { path: "verification", icon: <FaCalendarAlt size={20} />, label: "Calender" },
-      { path: "ToolingIntegrations", icon: <FaRegCalendar size={20} />, label: "Manage Availability" },
-      { path: "Testing", icon: <FaRegCalendar size={20} />, label: "Call Availability" },
-      { path: "Testing", icon: <FaRegCalendarCheck size={20} />, label: "Booking" },
-      { path: "Testing", icon: <BsCreditCard size={20} />, label: "Card Detail" },
+      { path: "ServiceLocation", icon: <FaLocationDot size={20} />, label: "Service Location" },
+      { path: "BookingCalendar", icon: <FaCalendarAlt size={20} />, label: "Calender" },
+      { path: "ManageAvailability", icon: <FaRegCalendar size={20} />, label: "Manage Availability" },
+      { path: "CallAvailability", icon: <FaRegCalendar size={20} />, label: "Call Availability" },
+      { path: "Bookings", icon: <FaRegCalendarCheck size={20} />, label: "Booking" },
+      { path: "CardDetail", icon: <BsCreditCard size={20} />, label: "Card Detail" },
       { path: "Testing", icon: <FaLock size={20} />, label: "Change Password" },
     ];
 

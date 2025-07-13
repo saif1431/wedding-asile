@@ -24,7 +24,7 @@ function ProfileInfo() {
   };
   return (
     <div className='bg-white py-12 lg:px-32 px-4 '>
-<div className='flex flex-col-reverse lg:flex-ro items-center gap-7=8'>
+<div className='flex flex-col-reverse lg:flex-row items-center gap-7=8'>
   <img className='w-40 h-40 rounded-full' src="https://www.shaadisouk.com/_next/image?url=https%3A%2F%2Fshaadisouk-image-bucket.s3.eu-west-2.amazonaws.com%2Fuploads%2F348eb27c-bc1e-477f-a1d9-9d601accf8c6cropped-image.jpg&w=640&q=75" alt="" />
   <div className='space-y-4'>
       <div className="relative">
