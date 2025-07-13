@@ -35,3 +35,26 @@ body{
 }
 
 
+/* Custom scrollbar for the sidebar */
+.scrollable-menu {
+  scrollbar-width: none;
+  scrollbar-color: #93c5fd #dbeafe;
+}
+
+.scrollable-menu::-webkit-scrollbar {
+  width: 1px;
+}
+
+.scrollable-menu::-webkit-scrollbar-track {
+  background: #dbeafe;
+  border-radius: 4px;
+}
+
+.scrollable-menu::-webkit-scrollbar-thumb {
+  background-color: #93c5fd;
+  border-radius: 4px;
+}
+
+.scrollable-menu::-webkit-scrollbar-thumb:hover {
+  background-color: #60a5fa;
+}

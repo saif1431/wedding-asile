@@ -1,18 +1,14 @@
 import React from 'react'
-import TopHeader from './Components/ReuseableComponent/TopHeader'
-import Navbar from './Components/ReuseableComponent/Navbar'
-import Footer from './Components/ReuseableComponent/Footer'
-import ServiceCard from './Components/ReuseableComponent/ServiceCard'
 import { Route, Routes } from 'react-router-dom'
 import HomePageRoute from './Routes/HomePageRoute'
-
+import VendorRoutes from './Routes/VendorRoutes'
 
 function App() {
   return (
-    <Routes >
-        <Route path="/*" element={<HomePageRoute />} />
-        
-     </Routes>
+    <Routes>
+      <Route path="/*" element={<HomePageRoute />} />
+      <Route path="/vendor/*" element={<VendorRoutes />} />
+    </Routes>
   )
 }
 
