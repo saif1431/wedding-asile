@@ -10,11 +10,11 @@ function VendorLayout() {
   const closeSidebar = () => setSidebarOpen(false);
   return (  
     <div className="w-full flex ">
-      <div className="lg:w-[25%] w-0  ">
+      <div className="lg:w-[22%] w-0  ">
           <VendorSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
       </div>
-      <main className="lg:w-[75%] w-full  ">
+      <main className="lg:w-[78%] w-full  ">
 
         <Outlet context={{ toggleSidebar }} />  
       </main>

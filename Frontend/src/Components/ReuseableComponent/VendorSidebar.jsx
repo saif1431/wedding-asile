@@ -21,7 +21,7 @@
       { path: "/", icon: <IoMdHome  size={22} />, label: "HomePage" },
       { path: "/vendor/dashboard", icon: <MdDashboard  size={20} />, label: "Dashboard" },
       { path: "editProfile", icon: <CgProfile  size={20} />, label: "Edit Profile" },
-      { path: "payments", icon: <FiMessageSquare size={20} />, label: "Message" },
+      { path: "Messages", icon: <FiMessageSquare size={20} />, label: "Message" },
       { path: "packages", icon: <FaClipboardList size={20} />, label: "Manage Listing" },
       { path: "ServiceLocation", icon: <FaLocationDot size={20} />, label: "Service Location" },
       { path: "BookingCalendar", icon: <FaCalendarAlt size={20} />, label: "Calender" },
@@ -29,7 +29,7 @@
       { path: "CallAvailability", icon: <FaRegCalendar size={20} />, label: "Call Availability" },
       { path: "Bookings", icon: <FaRegCalendarCheck size={20} />, label: "Booking" },
       { path: "CardDetail", icon: <BsCreditCard size={20} />, label: "Card Detail" },
-      { path: "Testing", icon: <FaLock size={20} />, label: "Change Password" },
+      { path: "change-password", icon: <FaLock size={20} />, label: "Change Password" },
     ];
 
     return (
@@ -43,7 +43,7 @@
 
         {/* Sidebar */}
         <aside
-          className={`fixed h-screen flex flex-col text-white left-0 bg-primary border-r border-gray-300 w-[60%] sm:w-[50%] lg:w-[25%] z-50 transform transition-transform duration-300 ease-in-out
+          className={`fixed h-screen flex flex-col text-white left-0 bg-primary border-r border-gray-300 w-[70%] sm:w-[50%] lg:w-[22%] z-50 transform transition-transform duration-300 ease-in-out
       ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
         >
           {/* Logo Section - Fixed at top` */}
@@ -75,8 +75,8 @@
           {/* Logout Section - Fixed at bottom */}
           <div className="px-6 py-4 text-xl  border-gray-300">
             <NavLink 
-              to="logout"
-              className="flex items-center gap-6 px-2 py-3 rounded-md transition-colors text-white hover:bg-red-500"
+              to="/"
+              className="flex items-center gap-6 px-2 py-3 rounded-md transition-colors text-white "
               onClick={onClose}
             >
               <MdLogout size={22} />

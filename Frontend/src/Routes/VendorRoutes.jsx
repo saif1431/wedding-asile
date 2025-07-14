@@ -10,6 +10,8 @@ import ManageAvailabilityPage from '../Pages/VendorPages/ManageAvailabilityPage'
 import CallAvailability from '../Pages/VendorPages/CallAvailability'
 import CardDetailPage from '../Pages/VendorPages/CardDetailPage'
 import BookingsPage from '../Pages/VendorPages/BookingsPage'
+import MessagePage from '../Pages/VendorPages/MessagePage'
+import ChangePassword from '../Pages/VendorPages/ChangePassword'
 
 function VendorRoutes() {
   return (
@@ -24,6 +26,8 @@ function VendorRoutes() {
         <Route path="CallAvailability" element={<CallAvailability />} />
         <Route path="CardDetail" element={<CardDetailPage />} />
         <Route path="Bookings" element={<BookingsPage />} />
+        <Route path="Messages" element={<MessagePage />} />
+        <Route path="change-password" element={<ChangePassword />} />
 
       </Route>
     </Routes>

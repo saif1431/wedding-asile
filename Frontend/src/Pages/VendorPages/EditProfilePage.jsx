@@ -7,7 +7,7 @@ function EditProfilePage() {
    const { toggleSidebar } = useOutletContext(); // get function from layout
   return (
     <div>
-      <VendorHeader title="Dashboard" onMenuToggle={toggleSidebar} /> 
+      <VendorHeader title="Edit Profile" onMenuToggle={toggleSidebar} /> 
       <div className='lg:px-6 px-6 py-4   mt-4'>
         <EditProfileHeader/>
       </div>
