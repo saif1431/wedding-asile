@@ -1,0 +1,11 @@
+
+
+{
+      "rewrites": [
+        {
+          "source": "/(.*)",
+          "destination": "/",
+          "status": 200
+        }
+      ]
+}
