@@ -8,7 +8,7 @@ function BookingCalendarPage() {
   return (
     <div>
       <VendorHeader title="Booking Calendar" onMenuToggle={toggleSidebar} /> 
-      <div className='lg:px-12 px-6 py-4 mt-4'>
+      <div className='4lg:px-12 px-6 py-4 mt-'>
             <p className='text-gray-500'>View and manage all your wedding bookings</p>
 <BookingCalendar/>
       </div>

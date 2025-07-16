@@ -2,7 +2,7 @@
 
 import { X, Camera } from "lucide-react"
 
-export default function BookingDetailsView() {
+ function OrderDetailView() {
   const bookingData = {
     orderId: "y500tvnbidk",
     bookingStatus: "Cancelled",
@@ -11,6 +11,7 @@ export default function BookingDetailsView() {
       date: "26 June 2025",
       name: "Cherish Every Wedding Day Moment",
     },
+    servieFee: 56,
     totalAmount: 2800,
     amountPaid: 0,
     balance: 0,
@@ -24,8 +25,9 @@ export default function BookingDetailsView() {
       address: "ulafufsdbfu dnfucifn",
       postcode: "23455",
     },
-    customer: {
-      name: "Ahmed",
+    Billing: {
+      location: "Rawalpindi",
+      postalCode: 6743,
     },
     serviceDetails: [
       {
@@ -153,8 +155,9 @@ export default function BookingDetailsView() {
 
         {/* Customer Details */}
         <div className="bg-white p-6 rounded-lg shadow-sm">
-          <h3 className="font-semibold text-gray-900 mb-4">Customer Details</h3>
-          <div className="font-medium text-gray-900">{bookingData.customer.name}</div>
+          <h3 className="font-semibold text-gray-900 mb-4">Billing</h3>
+          <div className="font-medium text-gray-900">{bookingData.Billing.location}</div>
+          <p>{bookingData.Billing.postalCode}</p>
         </div>
       </div>
 
@@ -199,6 +202,11 @@ export default function BookingDetailsView() {
           <div className="flex justify-end">
             <div className="w-64 space-y-3">
               <div className="flex justify-between">
+                <span className="text-gray-700">Service Fee (2%)</span>
+                <span className="font-medium text-gray-900">£{bookingData.    servieFee
+}</span>
+              </div>
+              <div className="flex justify-between">
                 <span className="text-gray-700">Total</span>
                 <span className="font-medium text-gray-900">£{bookingData.totalAmount}</span>
               </div>
@@ -217,10 +225,12 @@ export default function BookingDetailsView() {
 
       {/* Action Button */}
       <div className="flex justify-start">
-        <button className="btn text-white px-8 py-3 rounded-full font-medium">
+        <button className="btn text-white  px-8 py-3 rounded-full font-medium">
           View Invoice
         </button>
       </div>
     </div>
   )
 }
+
+export default OrderDetailView

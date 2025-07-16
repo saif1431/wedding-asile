@@ -5,6 +5,7 @@ import { FaRegMessage } from "react-icons/fa6";
 import { MdOutlineCall } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
 import { FaRegCircleCheck } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 
 function ServiceDetail() {
@@ -31,11 +32,12 @@ function ServiceDetail() {
                   <FaRegMessage />
                   Send Message</button>
             <button className='flex items-center gap-4 bg-white border btn2 shadow-2xl font-philper  text-xl rounded-lg  hover:text-white py-3 px-6 '>
-                  <MdOutlineCall />
-                  Book Call</button>
+                  <Link className='flex items-center gap-4' to='/call-booking'><MdOutlineCall />
+                  Book Call</Link></button>
             <button className='flex items-center gap-4 bg-white border btn2 shadow-2xl font-philper  text-xl rounded-lg  hover:text-white py-3 px-6 '>
                   <FaRegHeart />
-                  ShortList</button>
+                  ShortList
+                  </button>
       </div>
 
       <div className='max-w-2xl h-[200px]  grid grid-cols-2 w-full'>

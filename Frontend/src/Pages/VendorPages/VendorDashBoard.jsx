@@ -8,6 +8,7 @@ import { useOutletContext } from 'react-router-dom'
 
 
 function VendorDashBoard() {
+  
   const { toggleSidebar } = useOutletContext(); // get function from layout
   return (
     <div>

@@ -23,7 +23,7 @@ function Footer() {
           <ul className="space-y-2 text-lg flex flex-col">
             <Link to='about'>About Us</Link>
             <li>How it Works</li>
-            <li>Contact Us</li>
+            <Link to='contact-us'>Contact Us</Link>
             <Link to='cancellation-policy'>Cancellation Policy</Link>
             <Link to='terms-of-use'>Terms Of Use</Link>
             <li>Privacy Notice</li>

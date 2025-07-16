@@ -9,7 +9,7 @@ import "swiper/css/pagination"
 import { IoStar } from "react-icons/io5"
 import { RiVerifiedBadgeFill } from "react-icons/ri"
 import { Navigation, Pagination, Autoplay } from "swiper/modules"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 const ServiceCard = ({ service }) => {
   const swiperRef = useRef(null)
@@ -250,32 +250,47 @@ const servicesData = [
 ]
 
 export default function ServicesCarousel() {
+  const location = useLocation()
+  const isHomePage = location.pathname === '/'
+
+  if (isHomePage) {
+    return (
+      <div className="">
+       
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={30}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          modules={[Autoplay]}
+          className="mySwiper"
+        >
+          {servicesData.map((service) => (
+            <SwiperSlide key={service.id}>
+              <ServiceCard service={service} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    )
+  }
+
+  // For non-home pages, show static grid
   return (
-    <div className="">
-      <Swiper
-        slidesPerView={1}
-        spaceBetween={30}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        breakpoints={{
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        }}
-        modules={[ Autoplay]}
-        className="mySwiper"
-      >
-        {servicesData.map((service) => (
-          <SwiperSlide key={service.id}>
-            <ServiceCard service={service} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {servicesData.map((service) => (
+        <ServiceCard key={service.id} service={service} />
+      ))}
     </div>
   )
 }

@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Check } from "lucide-react"
+import { Link } from "react-router-dom"
 
 export default function BookingForm() {
   const [formData, setFormData] = useState({
@@ -70,12 +71,12 @@ export default function BookingForm() {
             </div>
 
             {/* Reserve Button */}
-            <button
+            <Link to='/booking'
               type="submit"
-              className="w-full btn text-white font-semibold py-4 rounded-full text-lg transition-colors mt-6"
+              className="w-full btn px-4   text-white font-semibold py-4 rounded-full text-lg transition-colors mt-8"
             >
               Reserve
-            </button>
+            </Link>
           </form>
 
           {/* You won't be charged yet */}
