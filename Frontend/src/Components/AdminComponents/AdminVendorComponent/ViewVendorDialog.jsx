@@ -24,8 +24,19 @@ export const ViewVendorDialog = ({
     <div className="fixed inset-0 bg-opacity-70 backdrop-blur-sm flex items-center justify-center z-50 px-4">
       <div className="bg-white border border-gray-400 shadow-lg rounded-lg p-6 w-full max-w-4xl">
         <div className="mb-4">
-          <h2 className="text-xl font-bold">Vendor Details - {vendor.name}</h2>
+         <div className="flex items-center justify-between lg:flex-row flex-col">
+          <div>
+             <h2 className="text-xl font-bold">Vendor Details - {vendor.name}</h2>
           <p className="text-gray-500">Complete vendor information and statistics</p>
+          </div>
+          <div>
+            <select className="border border-gray-300 py-2 px-6 rounded-lg" name="" id="">
+              <option value="">Photographer</option>
+              <option value="">Videographer</option>
+              <option value="">Both</option>
+            </select>
+          </div>
+         </div>
         </div>
         <div className="grid gap-6">
           <div className="grid grid-cols-2 gap-6">
@@ -90,7 +101,7 @@ export const ViewVendorDialog = ({
               className="px-4 py-2 btn text-white border rounded hover:bg-gray-100"
               onClick={onEdit}
             >
-              Edit Vendor
+              Activate
             </button>
             {vendor.status === "pending" && (
               <>

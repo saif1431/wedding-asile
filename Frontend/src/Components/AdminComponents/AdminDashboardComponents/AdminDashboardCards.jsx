@@ -39,6 +39,7 @@ const stats = [
 
  function AdminDashboardCards() {
   return (
+    <div className="space-y-6 ">
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       {stats.map((stat) => (
         <div key={stat.title} className="rounded-lg border border-gray-300 bg-white p-6 shadow-sm">
@@ -65,6 +66,25 @@ const stats = [
         </div>
       ))}
     </div>
+        <div className="grid gap-4 md:grid-cols-4">
+        {/* Stats Cards */}
+        {[
+          { title: "Total Customers", value: "1,247", change: "+12% from last month" },
+          { title: "Active Customers", value: "1,089", change: "87% of total" },
+          { title: "Premium Customers", value: "156", change: "12.5% of total" },
+          { title: "Avg. Spending", value: "£1,850", change: "Per customer" },
+        ].map((stat, index) => (
+          <div key={index} className="border border-gray-300   rounded-lg p-6 bg-white shadow-sm">
+            <div className="flex justify-between items-center mb-2">
+              <h3 className="text-sm font-medium text-gray-500">{stat.title}</h3>
+            </div>
+            <div className="text-2xl font-bold">{stat.value}</div>
+            <p className="text-xs mt-2 text-gray-500">{stat.change}</p>
+          </div>  
+        ))}
+      </div>
+    </div>
+    
   );
 } 
 

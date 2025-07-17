@@ -1,6 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { Search, Eye, MessageSquare, Ban, Edit } from "lucide-react";
+import { TbRadioactiveFilled } from "react-icons/tb";
+import { ActivationDialog } from "../../AdminVendorComponent/ActivationDialog";
+
 
 const customers = [
   {
@@ -59,6 +62,15 @@ const customers = [
   const [editingCustomer, setEditingCustomer] = useState(null);
   const [isViewDialogOpen, setIsViewDialogOpen] = useState(false);
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
+ const [isActivationDialogOpen, setIsActivationDialogOpen] = useState(false);
+  
+
+const handleStatusChange = (customer, newStatus) => {
+  // Here you would typically make an API call to update the status
+  console.log(`Changed status for ${customer.name} to ${newStatus}`);
+  setIsActivationDialogOpen(false);
+  // In a real app, you would update your customers state here
+};
 
   const filteredCustomers = customers.filter(
     (customer) =>
@@ -86,29 +98,12 @@ const customers = [
         <p className="text-gray-500">Manage customer accounts and relationships</p>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-4">
-        {/* Stats Cards */}
-        {[
-          { title: "Total Customers", value: "1,247", change: "+12% from last month" },
-          { title: "Active Customers", value: "1,089", change: "87% of total" },
-          { title: "Premium Customers", value: "156", change: "12.5% of total" },
-          { title: "Avg. Spending", value: "£1,850", change: "Per customer" },
-        ].map((stat, index) => (
-          <div key={index} className="border border-gray-300   rounded-lg p-4 bg-white shadow-sm">
-            <div className="flex justify-between items-center mb-2">
-              <h3 className="text-sm font-medium text-gray-500">{stat.title}</h3>
-            </div>
-            <div className="text-2xl font-bold">{stat.value}</div>
-            <p className="text-xs text-gray-500">{stat.change}</p>
-          </div>
-        ))}
-      </div>
+  
 
       <div className="border border-gray-300 rounded-lg bg-white shadow-sm p-6">
-        <div className="mb-6">
-          <h2 className="text-xl font-bold">All Customers</h2>
-          <p className="text-gray-500">View and manage customer accounts</p>
-          <div className="flex items-center mt-4 border border-gray-300 rounded-lg p-2 w-fit">
+        <div className="mb-6 flex items-center gap-4 flex-wrap">
+         
+          <div className="flex items-center border border-gray-300 rounded-lg p-2 w-fit">
             <input
               type="text"
               placeholder="Search customers..."
@@ -118,6 +113,17 @@ const customers = [
             />
                         <Search className="h-4 w-4 text-gray-400 mr-2" />
 
+          </div>
+              <div>
+            <select className="py-4 px-6 border rounded-lg border-gray-300 " name="" id="">
+              <option value="">Total Spent</option>
+              <option value="">£ 878</option>
+              <option value="">£ 843</option>
+              <option value="">£ 8748</option>
+              <option value="">£ 728</option>
+              <option value="">£ 248</option>
+              {/* <option value="">Other</option> */}
+            </select>
           </div>
         </div>
 
@@ -193,21 +199,21 @@ const customers = [
                       >
                         <Eye className="h-4 w-4" />
                       </button>
-                      <button
-                        className="p-1 text-gray-600 hover:text-gray-800"
-                        onClick={() => {
-                          setEditingCustomer(customer);
-                          setIsEditDialogOpen(true);
-                        }}
-                      >
-                        <Edit className="h-4 w-4" />
-                      </button>
-                      <button className="p-1 text-blue-600 hover:text-blue-800">
-                        <MessageSquare className="h-4 w-4" />
-                      </button>
-                      <button className="p-1 text-red-600 hover:text-red-800">
-                        <Ban className="h-4 w-4" />
-                      </button>
+                      <ActivationDialog  
+  isOpen={isActivationDialogOpen}
+  onClose={() => setIsActivationDialogOpen(false)}
+  vendor={editingCustomer} // Changed from vendor to editingCustomer
+  onStatusChange={handleStatusChange}
+/>
+                    <button
+  className="p-1 text-blue-600 hover:text-blue-800"
+  onClick={() => {
+    setEditingCustomer(customer); // Changed from setEditingVendor
+    setIsActivationDialogOpen(true);
+  }}
+>
+  <TbRadioactiveFilled className="h-4 w-4" />
+</button>
                     </div>
                   </td>
                 </tr>
@@ -382,6 +388,13 @@ const customers = [
           </div>
         </div>
       )}
+
+         <ActivationDialog  
+        isOpen={isActivationDialogOpen}
+        onClose={() => setIsActivationDialogOpen(false)}
+       
+        onStatusChange={handleStatusChange}
+      />
     </div>
   );
 } 
