@@ -18,7 +18,6 @@ import { AlertCircle, Calendar, Camera, CreditCard, MessageSquare, Users } from 
       { path: "admin-customer", icon: <Users  size={20} />, label: "Customers" },
       { path: "payments", icon: <CreditCard size={20} />, label: "Payments" },
       { path: "Support&Ticket", icon: <MessageSquare size={20} />, label: "Support" },
-      { path: "bookings", icon: <Calendar size={20} />, label: "Bookings" },
       { path: "complaints", icon: <AlertCircle  size={20} />, label: " complaints" },
       { path: "change-password", icon: <FaLock size={20} />, label: "Change Password" },
 

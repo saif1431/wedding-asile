@@ -22,12 +22,12 @@ function Footer() {
           <h3 className="text-white font-semibold  mb-4 text-2xl">About Us</h3>
           <ul className="space-y-2 text-lg flex flex-col">
             <Link to='about'>About Us</Link>
-            <li>How it Works</li>
+            <li><a href="/">How it Works</a></li>
             <Link to='contact-us'>Contact Us</Link>
             <Link to='cancellation-policy'>Cancellation Policy</Link>
             <Link to='terms-of-use'>Terms Of Use</Link>
-            <li>Privacy Notice</li>
-            <li>FAQs</li>
+            <Link to='PrivacyNotes'>Privacy Notice</Link>
+            <Link to='FAQS'>FAQs</Link>
           </ul>
         </div>
 

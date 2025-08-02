@@ -18,6 +18,9 @@ import NewPassword from '../Pages/HomePages/NewPassword'
 import BookingDetail from '../Pages/HomePages/BookingDetail'
 import CheckoutPage from '../Pages/HomePages/CheckoutPage'
 import BookingCallPage from '../Pages/HomePages/BookingCallPage'
+import PrivacyNotes from '../Pages/HomePages/PrivacyNotes'
+import FAQS from '../Pages/HomePages/FAQS'
+import VendorMap from '../Pages/HomePages/VendorMap'
 
 function HomePageRoute() {
   return (
@@ -35,6 +38,8 @@ function HomePageRoute() {
         <Route path='contact-us' element={<ContactUs />} />
         <Route path='Checkout' element={<CheckoutPage />} />
         <Route path='call-booking' element={<BookingCallPage />} />
+        <Route path='PrivacyNotes' element={<PrivacyNotes />} />
+        <Route path='FAQS' element={<FAQS />} />
       </Route>
       
       {/* Auth routes without header/footer */}
@@ -43,6 +48,7 @@ function HomePageRoute() {
         <Route path="forget-password" element={<ForgetPassword />} />
         <Route path="change-password" element={<NewPassword />} />
         <Route path="SignUp" element={<SignUp />} />
+        <Route path="VendorMap" element={<VendorMap />} />
       </Route>
     </Routes>
   )
