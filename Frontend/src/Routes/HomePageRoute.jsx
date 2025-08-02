@@ -21,6 +21,7 @@ import BookingCallPage from '../Pages/HomePages/BookingCallPage'
 import PrivacyNotes from '../Pages/HomePages/PrivacyNotes'
 import FAQS from '../Pages/HomePages/FAQS'
 import VendorMap from '../Pages/HomePages/VendorMap'
+import VendorServiceText from '../Pages/HomePages/VendorServiceForm/VendorServiceText'
 
 function HomePageRoute() {
   return (
@@ -40,6 +41,7 @@ function HomePageRoute() {
         <Route path='call-booking' element={<BookingCallPage />} />
         <Route path='PrivacyNotes' element={<PrivacyNotes />} />
         <Route path='FAQS' element={<FAQS />} />
+        <Route path='VendorServiceForm' element={<VendorServiceText />} />
       </Route>
       
       {/* Auth routes without header/footer */}
